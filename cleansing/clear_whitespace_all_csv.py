@@ -5,7 +5,7 @@
 import glob
 import csv
 
-weather_element = ['humidity']
+weather_element = ['wind']
 #weather_element = ['humidity', 'rainfall', 'temperature']
 
 for element in weather_element:

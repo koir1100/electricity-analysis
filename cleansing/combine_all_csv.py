@@ -1,11 +1,9 @@
 # 출처: https://sidorl.tistory.com/48
 # 출처: https://redcarrot.tistory.com/222
-import os
 import glob
 
 # climate_elements = ['05', '06', '07', '08', '09', '10', '11', '12']
-# climate_elements = ['humidity', 'rainfall', 'temperature']
-climate_elements = ['temperature']
+climate_elements = ['humidity', 'rainfall', 'temperature']
 
 for element in climate_elements:
     path = '/Users/DragonPC/Desktop/project_2nd/climate/2002-2011/' + element + '/'
