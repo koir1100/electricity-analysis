@@ -40,7 +40,7 @@ FILE_FORMAT=(type='CSV' skip_header=1 RECORD_DELIMITER = '\\n' FIELD_OPTIONALLY_
 
 COPY INTO dev.raw_data.TEMPERATURE
 FROM 's3://yonggu-practice-bucket/project_2nd/yonggu_part/merge_total_temperature.csv'
-credentials=(AWS_KEY_ID='{}' AWS_SECRET_KEY='{}'')
+credentials=(AWS_KEY_ID='{}' AWS_SECRET_KEY='{}')
 FILE_FORMAT=(type='CSV' skip_header=1 RECORD_DELIMITER = '\\n' FIELD_OPTIONALLY_ENCLOSED_BY='"' ENCODING='EUCKR' REPLACE_INVALID_CHARACTERS = TRUE);
 
 COMMIT;
@@ -82,7 +82,7 @@ SELECT
   avg(AVG_TEMPERATURE) as "TEMPERATURE",
   avg(LOWEST_TEMPERATURE) as "LOWEST_TEMPERATURE",
   avg(HIGHEST_TEMPERATURE) as "HIGHEST_TEMPERATURE"
-  FROM dev.raw_data.RAINFALL
+  FROM dev.raw_data.TEMPERATURE
   GROUP BY local_name, "month"
   ORDER BY local_name, "month"
   LIMIT 10;
