@@ -1,0 +1,127 @@
+table_name: climate_summary
+main_dttm_col: TS
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+schema: analytics
+sql: ''
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+uuid: 8fffb63d-9734-440a-bcce-a6de4e2893e2
+metrics:
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra: {}
+  warning_text: null
+columns:
+- column_name: WINDCHILL
+  verbose_name: WINDCHILL
+  is_dttm: false
+  is_active: true
+  type: NUMERIC
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: 13.12 + (0.6215 * TEMPERATURE - 11.37 * POWER((3.6 * WINDSPEED), 0.16))
+    + (0.3965 * TEMPERATURE * POWER((3.6 * WINDSPEED), 0.16))
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: DISCOMFORT
+  verbose_name: DISCOMFORT
+  is_dttm: false
+  is_active: true
+  type: NUMERIC
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: 1.8 * TEMPERATURE - (0.55 * (1 - (0.01 * HUMIDITY)) * (1.8 * TEMPERATURE
+    - 26)) + 32
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: TEMPERATURE
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DECIMAL(38, 12)
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: WINDSPEED
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DECIMAL(38, 12)
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: HUMIDITY
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DECIMAL(38, 12)
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: RAINFALL
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DECIMAL(23, 7)
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: LOCAL_NAME
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: VARCHAR(10)
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: TS
+  verbose_name: null
+  is_dttm: true
+  is_active: true
+  type: DATE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+version: 1.0.0
+database_uuid: 98c7bfda-00bd-475f-8263-0f4cee957a9f

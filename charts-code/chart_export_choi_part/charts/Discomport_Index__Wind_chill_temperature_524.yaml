@@ -1,0 +1,206 @@
+slice_name: Discomport Index & Wind chill temperature
+description: null
+certified_by: null
+certification_details: null
+viz_type: mixed_timeseries
+params:
+  datasource: 41__table
+  viz_type: mixed_timeseries
+  x_axis: TS
+  time_grain_sqla: P1M
+  metrics:
+  - expressionType: SIMPLE
+    column:
+      advanced_data_type: null
+      changed_on: '2024-05-16T02:24:03.852222'
+      column_name: DISCOMFORT
+      created_on: '2024-05-16T02:24:03.852213'
+      description: null
+      expression: 1.8 * TEMPERATURE - (0.55 * (1 - (0.01 * HUMIDITY)) * (1.8 * TEMPERATURE
+        - 26)) + 32
+      extra: '{}'
+      filterable: true
+      groupby: true
+      id: 1074
+      is_active: true
+      is_dttm: false
+      python_date_format: null
+      type: NUMERIC
+      type_generic: 0
+      uuid: e491653e-d3ca-464f-94d8-79e0681077d6
+      verbose_name: DISCOMFORT
+    aggregate: MAX
+    sqlExpression: null
+    datasourceWarning: false
+    hasCustomLabel: true
+    label: DISCOMPORT
+    optionName: metric_kj9rlctpn37_7c3zu13lhn2
+  groupby: []
+  adhoc_filters:
+  - clause: WHERE
+    subject: TS
+    operator: TEMPORAL_RANGE
+    comparator: No filter
+    expressionType: SIMPLE
+  order_desc: true
+  row_limit: 10000
+  truncate_metric: true
+  comparison_type: values
+  metrics_b:
+  - expressionType: SIMPLE
+    column:
+      advanced_data_type: null
+      changed_on: '2024-05-16T02:24:03.852351'
+      column_name: WINDCHILL
+      created_on: '2024-05-16T02:24:03.852347'
+      description: null
+      expression: 13.12 + (0.6215 * TEMPERATURE - 11.37 * POWER((3.6 * WINDSPEED),
+        0.16)) + (0.3965 * TEMPERATURE * POWER((3.6 * WINDSPEED), 0.16))
+      extra: '{}'
+      filterable: true
+      groupby: true
+      id: 1075
+      is_active: true
+      is_dttm: false
+      python_date_format: null
+      type: NUMERIC
+      type_generic: 0
+      uuid: 9c02f2c8-5439-4032-b1f5-b9cfc855b735
+      verbose_name: WINDCHILL
+    aggregate: MIN
+    sqlExpression: null
+    datasourceWarning: false
+    hasCustomLabel: true
+    label: WINDCHILL
+    optionName: metric_32fec56wf15_d31oiz5aorn
+  groupby_b: []
+  adhoc_filters_b:
+  - clause: WHERE
+    subject: TS
+    operator: TEMPORAL_RANGE
+    comparator: No filter
+    expressionType: SIMPLE
+  order_desc_b: true
+  row_limit_b: 10000
+  truncate_metric_b: true
+  comparison_type_b: values
+  annotation_layers: []
+  x_axis_title: DATE
+  x_axis_title_margin: 30
+  y_axis_title: DISCOMPORT [DI]
+  y_axis_title_margin: 30
+  y_axis_title_position: Top
+  color_scheme: echarts4Colors
+  seriesType: scatter
+  opacity: 0.2
+  markerSize: 6
+  seriesTypeB: bar
+  stackB: false
+  areaB: false
+  opacityB: 0.1
+  markerSizeB: 6
+  yAxisIndexB: 1
+  show_legend: true
+  legendType: scroll
+  legendOrientation: bottom
+  legendMargin: 0
+  x_axis_time_format: smart_date
+  rich_tooltip: true
+  tooltipTimeFormat: smart_date
+  minorSplitLine: true
+  truncateXAxis: true
+  y_axis_bounds:
+  - 40
+  - 90
+  y_axis_format: SMART_NUMBER
+  y_axis_bounds_secondary:
+  - null
+  - null
+  y_axis_format_secondary: SMART_NUMBER
+  yAxisTitleSecondary: "WINDCHILL [\u2103]"
+  extra_form_data: {}
+  dashboards: []
+query_context: "{\"datasource\":{\"id\":41,\"type\":\"table\"},\"force\":false,\"\
+  queries\":[{\"filters\":[{\"col\":\"TS\",\"op\":\"TEMPORAL_RANGE\",\"val\":\"No\
+  \ filter\"}],\"extras\":{\"time_grain_sqla\":\"P1M\",\"having\":\"\",\"where\":\"\
+  \"},\"applied_time_extras\":{},\"columns\":[{\"timeGrain\":\"P1M\",\"columnType\"\
+  :\"BASE_AXIS\",\"sqlExpression\":\"TS\",\"label\":\"TS\",\"expressionType\":\"SQL\"\
+  }],\"metrics\":[{\"expressionType\":\"SIMPLE\",\"column\":{\"advanced_data_type\"\
+  :null,\"changed_on\":\"2024-05-16T02:24:03.852222\",\"column_name\":\"DISCOMFORT\"\
+  ,\"created_on\":\"2024-05-16T02:24:03.852213\",\"description\":null,\"expression\"\
+  :\"1.8 * TEMPERATURE - (0.55 * (1 - (0.01 * HUMIDITY)) * (1.8 * TEMPERATURE - 26))\
+  \ + 32\",\"extra\":\"{}\",\"filterable\":true,\"groupby\":true,\"id\":1074,\"is_active\"\
+  :true,\"is_dttm\":false,\"python_date_format\":null,\"type\":\"NUMERIC\",\"type_generic\"\
+  :0,\"uuid\":\"e491653e-d3ca-464f-94d8-79e0681077d6\",\"verbose_name\":\"DISCOMFORT\"\
+  },\"aggregate\":\"MAX\",\"sqlExpression\":null,\"datasourceWarning\":false,\"hasCustomLabel\"\
+  :true,\"label\":\"DISCOMPORT\",\"optionName\":\"metric_kj9rlctpn37_7c3zu13lhn2\"\
+  }],\"annotation_layers\":[],\"row_limit\":10000,\"series_columns\":[],\"series_limit\"\
+  :0,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{},\"time_offsets\"\
+  :[],\"post_processing\":[{\"operation\":\"pivot\",\"options\":{\"index\":[\"TS\"\
+  ],\"columns\":[],\"aggregates\":{\"DISCOMPORT\":{\"operator\":\"mean\"}},\"drop_missing_columns\"\
+  :true}},{\"operation\":\"flatten\"}],\"orderby\":[[{\"expressionType\":\"SIMPLE\"\
+  ,\"column\":{\"advanced_data_type\":null,\"changed_on\":\"2024-05-16T02:24:03.852222\"\
+  ,\"column_name\":\"DISCOMFORT\",\"created_on\":\"2024-05-16T02:24:03.852213\",\"\
+  description\":null,\"expression\":\"1.8 * TEMPERATURE - (0.55 * (1 - (0.01 * HUMIDITY))\
+  \ * (1.8 * TEMPERATURE - 26)) + 32\",\"extra\":\"{}\",\"filterable\":true,\"groupby\"\
+  :true,\"id\":1074,\"is_active\":true,\"is_dttm\":false,\"python_date_format\":null,\"\
+  type\":\"NUMERIC\",\"type_generic\":0,\"uuid\":\"e491653e-d3ca-464f-94d8-79e0681077d6\"\
+  ,\"verbose_name\":\"DISCOMFORT\"},\"aggregate\":\"MAX\",\"sqlExpression\":null,\"\
+  datasourceWarning\":false,\"hasCustomLabel\":true,\"label\":\"DISCOMPORT\",\"optionName\"\
+  :\"metric_kj9rlctpn37_7c3zu13lhn2\"},false]]},{\"filters\":[{\"col\":\"TS\",\"op\"\
+  :\"TEMPORAL_RANGE\",\"val\":\"No filter\"}],\"extras\":{\"time_grain_sqla\":\"P1M\"\
+  ,\"having\":\"\",\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[{\"timeGrain\"\
+  :\"P1M\",\"columnType\":\"BASE_AXIS\",\"sqlExpression\":\"TS\",\"label\":\"TS\"\
+  ,\"expressionType\":\"SQL\"}],\"metrics\":[{\"expressionType\":\"SIMPLE\",\"column\"\
+  :{\"advanced_data_type\":null,\"changed_on\":\"2024-05-16T02:24:03.852351\",\"column_name\"\
+  :\"WINDCHILL\",\"created_on\":\"2024-05-16T02:24:03.852347\",\"description\":null,\"\
+  expression\":\"13.12 + (0.6215 * TEMPERATURE - 11.37 * POWER((3.6 * WINDSPEED),\
+  \ 0.16)) + (0.3965 * TEMPERATURE * POWER((3.6 * WINDSPEED), 0.16))\",\"extra\":\"\
+  {}\",\"filterable\":true,\"groupby\":true,\"id\":1075,\"is_active\":true,\"is_dttm\"\
+  :false,\"python_date_format\":null,\"type\":\"NUMERIC\",\"type_generic\":0,\"uuid\"\
+  :\"9c02f2c8-5439-4032-b1f5-b9cfc855b735\",\"verbose_name\":\"WINDCHILL\"},\"aggregate\"\
+  :\"MIN\",\"sqlExpression\":null,\"datasourceWarning\":false,\"hasCustomLabel\":true,\"\
+  label\":\"WINDCHILL\",\"optionName\":\"metric_32fec56wf15_d31oiz5aorn\"}],\"annotation_layers\"\
+  :[],\"row_limit\":10000,\"series_columns\":[],\"series_limit\":0,\"url_params\"\
+  :{},\"custom_params\":{},\"custom_form_data\":{},\"time_offsets\":[],\"post_processing\"\
+  :[{\"operation\":\"pivot\",\"options\":{\"index\":[\"TS\"],\"columns\":[],\"aggregates\"\
+  :{\"WINDCHILL\":{\"operator\":\"mean\"}},\"drop_missing_columns\":true}},{\"operation\"\
+  :\"flatten\"}],\"orderby\":[[{\"expressionType\":\"SIMPLE\",\"column\":{\"advanced_data_type\"\
+  :null,\"changed_on\":\"2024-05-16T02:24:03.852351\",\"column_name\":\"WINDCHILL\"\
+  ,\"created_on\":\"2024-05-16T02:24:03.852347\",\"description\":null,\"expression\"\
+  :\"13.12 + (0.6215 * TEMPERATURE - 11.37 * POWER((3.6 * WINDSPEED), 0.16)) + (0.3965\
+  \ * TEMPERATURE * POWER((3.6 * WINDSPEED), 0.16))\",\"extra\":\"{}\",\"filterable\"\
+  :true,\"groupby\":true,\"id\":1075,\"is_active\":true,\"is_dttm\":false,\"python_date_format\"\
+  :null,\"type\":\"NUMERIC\",\"type_generic\":0,\"uuid\":\"9c02f2c8-5439-4032-b1f5-b9cfc855b735\"\
+  ,\"verbose_name\":\"WINDCHILL\"},\"aggregate\":\"MIN\",\"sqlExpression\":null,\"\
+  datasourceWarning\":false,\"hasCustomLabel\":true,\"label\":\"WINDCHILL\",\"optionName\"\
+  :\"metric_32fec56wf15_d31oiz5aorn\"},false]]}],\"form_data\":{\"datasource\":\"\
+  41__table\",\"viz_type\":\"mixed_timeseries\",\"x_axis\":\"TS\",\"time_grain_sqla\"\
+  :\"P1M\",\"metrics\":[{\"expressionType\":\"SIMPLE\",\"column\":{\"advanced_data_type\"\
+  :null,\"changed_on\":\"2024-05-16T02:24:03.852222\",\"column_name\":\"DISCOMFORT\"\
+  ,\"created_on\":\"2024-05-16T02:24:03.852213\",\"description\":null,\"expression\"\
+  :\"1.8 * TEMPERATURE - (0.55 * (1 - (0.01 * HUMIDITY)) * (1.8 * TEMPERATURE - 26))\
+  \ + 32\",\"extra\":\"{}\",\"filterable\":true,\"groupby\":true,\"id\":1074,\"is_active\"\
+  :true,\"is_dttm\":false,\"python_date_format\":null,\"type\":\"NUMERIC\",\"type_generic\"\
+  :0,\"uuid\":\"e491653e-d3ca-464f-94d8-79e0681077d6\",\"verbose_name\":\"DISCOMFORT\"\
+  },\"aggregate\":\"MAX\",\"sqlExpression\":null,\"datasourceWarning\":false,\"hasCustomLabel\"\
+  :true,\"label\":\"DISCOMPORT\",\"optionName\":\"metric_kj9rlctpn37_7c3zu13lhn2\"\
+  }],\"groupby\":[],\"adhoc_filters\":[{\"clause\":\"WHERE\",\"subject\":\"TS\",\"\
+  operator\":\"TEMPORAL_RANGE\",\"comparator\":\"No filter\",\"expressionType\":\"\
+  SIMPLE\"}],\"order_desc\":true,\"row_limit\":10000,\"truncate_metric\":true,\"comparison_type\"\
+  :\"values\",\"annotation_layers\":[],\"x_axis_title\":\"DATE\",\"x_axis_title_margin\"\
+  :30,\"y_axis_title\":\"DISCOMPORT [DI]\",\"y_axis_title_margin\":30,\"y_axis_title_position\"\
+  :\"Top\",\"color_scheme\":\"echarts4Colors\",\"seriesType\":\"scatter\",\"opacity\"\
+  :0.2,\"markerSize\":6,\"seriesTypeB\":\"bar\",\"stackB\":false,\"areaB\":false,\"\
+  opacityB\":0.1,\"markerSizeB\":6,\"yAxisIndexB\":1,\"show_legend\":true,\"legendType\"\
+  :\"scroll\",\"legendOrientation\":\"bottom\",\"legendMargin\":0,\"x_axis_time_format\"\
+  :\"smart_date\",\"rich_tooltip\":true,\"tooltipTimeFormat\":\"smart_date\",\"minorSplitLine\"\
+  :true,\"truncateXAxis\":true,\"y_axis_bounds\":[40,90],\"y_axis_format\":\"SMART_NUMBER\"\
+  ,\"y_axis_bounds_secondary\":[null,null],\"y_axis_format_secondary\":\"SMART_NUMBER\"\
+  ,\"yAxisTitleSecondary\":\"WINDCHILL [\u2103]\",\"extra_form_data\":{},\"dashboards\"\
+  :[],\"force\":false,\"result_format\":\"json\",\"result_type\":\"full\"},\"result_format\"\
+  :\"json\",\"result_type\":\"full\"}"
+cache_timeout: null
+uuid: 1758428c-1e24-427f-84da-390bccfd407e
+version: 1.0.0
+dataset_uuid: 8fffb63d-9734-440a-bcce-a6de4e2893e2
