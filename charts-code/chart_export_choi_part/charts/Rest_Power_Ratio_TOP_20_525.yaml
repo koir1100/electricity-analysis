@@ -1,0 +1,63 @@
+slice_name: Rest Power Ratio (TOP 20)
+description: null
+certified_by: null
+certification_details: null
+viz_type: pivot_table_v2
+params:
+  datasource: 39__table
+  viz_type: pivot_table_v2
+  slice_id: 525
+  groupbyColumns: []
+  groupbyRows:
+  - DAY_AVERAGE
+  time_grain_sqla: P1M
+  temporal_columns_lookup:
+    DAY_AVERAGE: true
+  metrics:
+  - rest_ratio
+  metricsLayout: COLUMNS
+  adhoc_filters:
+  - clause: WHERE
+    comparator: No filter
+    expressionType: SIMPLE
+    operator: TEMPORAL_RANGE
+    subject: DAY_AVERAGE
+  row_limit: '20'
+  order_desc: false
+  aggregateFunction: Sum
+  combineMetric: false
+  valueFormat: ',.1%'
+  date_format: smart_date
+  rowOrder: value_a_to_z
+  colOrder: key_z_to_a
+  conditional_formatting:
+  - colorScheme: '#FDE380'
+    column: rest_ratio
+    operator: "\u2264"
+    targetValue: 0.2
+  extra_form_data: {}
+  dashboards:
+  - 12
+query_context: "{\"datasource\":{\"id\":39,\"type\":\"table\"},\"force\":false,\"\
+  queries\":[{\"filters\":[{\"col\":\"DAY_AVERAGE\",\"op\":\"TEMPORAL_RANGE\",\"val\"\
+  :\"No filter\"}],\"extras\":{\"time_grain_sqla\":\"P1M\",\"having\":\"\",\"where\"\
+  :\"\"},\"applied_time_extras\":{},\"columns\":[{\"timeGrain\":\"P1M\",\"columnType\"\
+  :\"BASE_AXIS\",\"sqlExpression\":\"DAY_AVERAGE\",\"label\":\"DAY_AVERAGE\",\"expressionType\"\
+  :\"SQL\"}],\"metrics\":[\"rest_ratio\"],\"orderby\":[[\"rest_ratio\",true]],\"annotation_layers\"\
+  :[],\"row_limit\":20,\"series_limit\":0,\"order_desc\":false,\"url_params\":{},\"\
+  custom_params\":{},\"custom_form_data\":{}}],\"form_data\":{\"datasource\":\"39__table\"\
+  ,\"viz_type\":\"pivot_table_v2\",\"slice_id\":525,\"groupbyColumns\":[],\"groupbyRows\"\
+  :[\"DAY_AVERAGE\"],\"time_grain_sqla\":\"P1M\",\"temporal_columns_lookup\":{\"DAY_AVERAGE\"\
+  :true},\"metrics\":[\"rest_ratio\"],\"metricsLayout\":\"COLUMNS\",\"adhoc_filters\"\
+  :[{\"clause\":\"WHERE\",\"comparator\":\"No filter\",\"expressionType\":\"SIMPLE\"\
+  ,\"operator\":\"TEMPORAL_RANGE\",\"subject\":\"DAY_AVERAGE\"}],\"row_limit\":\"\
+  20\",\"order_desc\":false,\"aggregateFunction\":\"Sum\",\"combineMetric\":false,\"\
+  valueFormat\":\",.1%\",\"date_format\":\"smart_date\",\"rowOrder\":\"value_a_to_z\"\
+  ,\"colOrder\":\"key_z_to_a\",\"conditional_formatting\":[{\"colorScheme\":\"#FDE380\"\
+  ,\"column\":\"rest_ratio\",\"operator\":\"\u2264\",\"targetValue\":0.2}],\"extra_form_data\"\
+  :{},\"dashboards\":[12],\"force\":false,\"result_format\":\"json\",\"result_type\"\
+  :\"full\"},\"result_format\":\"json\",\"result_type\":\"full\"}"
+cache_timeout: null
+uuid: d51482fd-4960-4ac7-ad8c-7222fad0c7dc
+version: 1.0.0
+dataset_uuid: e978aefc-46c5-4938-b915-2b39e61226a7

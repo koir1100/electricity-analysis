@@ -1,0 +1,104 @@
+slice_name: Power Consumption Demand (TOP 20)
+description: null
+certified_by: null
+certification_details: null
+viz_type: pivot_table_v2
+params:
+  datasource: 39__table
+  viz_type: pivot_table_v2
+  groupbyColumns: []
+  groupbyRows:
+  - DAY_AVERAGE
+  time_grain_sqla: P1M
+  temporal_columns_lookup:
+    DAY_AVERAGE: true
+  metrics:
+  - expressionType: SIMPLE
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: CURRENT_DEMAND
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 1060
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: DECIMAL(27, 9)
+      type_generic: 0
+      verbose_name: null
+      warning_markdown: null
+    aggregate: AVG
+    sqlExpression: null
+    datasourceWarning: false
+    hasCustomLabel: true
+    label: CURRENT_DEMAND
+    optionName: metric_gs9s5gmxtvm_84kgi1myphu
+  metricsLayout: COLUMNS
+  adhoc_filters:
+  - clause: WHERE
+    subject: DAY_AVERAGE
+    operator: TEMPORAL_RANGE
+    comparator: No filter
+    expressionType: SIMPLE
+  row_limit: '20'
+  order_desc: true
+  aggregateFunction: Sum
+  valueFormat: SMART_NUMBER
+  date_format: smart_date
+  rowOrder: value_z_to_a
+  colOrder: key_a_to_z
+  conditional_formatting:
+  - column: CURRENT_DEMAND
+    colorScheme: '#BC9501'
+    operator: "\u2265"
+    targetValue: 70000
+  extra_form_data: {}
+  dashboards:
+  - 12
+query_context: "{\"datasource\":{\"id\":39,\"type\":\"table\"},\"force\":false,\"\
+  queries\":[{\"filters\":[{\"col\":\"DAY_AVERAGE\",\"op\":\"TEMPORAL_RANGE\",\"val\"\
+  :\"No filter\"}],\"extras\":{\"time_grain_sqla\":\"P1M\",\"having\":\"\",\"where\"\
+  :\"\"},\"applied_time_extras\":{},\"columns\":[{\"timeGrain\":\"P1M\",\"columnType\"\
+  :\"BASE_AXIS\",\"sqlExpression\":\"DAY_AVERAGE\",\"label\":\"DAY_AVERAGE\",\"expressionType\"\
+  :\"SQL\"}],\"metrics\":[{\"expressionType\":\"SIMPLE\",\"column\":{\"advanced_data_type\"\
+  :null,\"certification_details\":null,\"certified_by\":null,\"column_name\":\"CURRENT_DEMAND\"\
+  ,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"\
+  id\":1060,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"\
+  type\":\"DECIMAL(27, 9)\",\"type_generic\":0,\"verbose_name\":null,\"warning_markdown\"\
+  :null},\"aggregate\":\"AVG\",\"sqlExpression\":null,\"datasourceWarning\":false,\"\
+  hasCustomLabel\":true,\"label\":\"CURRENT_DEMAND\",\"optionName\":\"metric_gs9s5gmxtvm_84kgi1myphu\"\
+  }],\"orderby\":[[{\"expressionType\":\"SIMPLE\",\"column\":{\"advanced_data_type\"\
+  :null,\"certification_details\":null,\"certified_by\":null,\"column_name\":\"CURRENT_DEMAND\"\
+  ,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"\
+  id\":1060,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"\
+  type\":\"DECIMAL(27, 9)\",\"type_generic\":0,\"verbose_name\":null,\"warning_markdown\"\
+  :null},\"aggregate\":\"AVG\",\"sqlExpression\":null,\"datasourceWarning\":false,\"\
+  hasCustomLabel\":true,\"label\":\"CURRENT_DEMAND\",\"optionName\":\"metric_gs9s5gmxtvm_84kgi1myphu\"\
+  },false]],\"annotation_layers\":[],\"row_limit\":20,\"series_limit\":0,\"order_desc\"\
+  :true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"form_data\"\
+  :{\"datasource\":\"39__table\",\"viz_type\":\"pivot_table_v2\",\"groupbyColumns\"\
+  :[],\"groupbyRows\":[\"DAY_AVERAGE\"],\"time_grain_sqla\":\"P1M\",\"temporal_columns_lookup\"\
+  :{\"DAY_AVERAGE\":true},\"metrics\":[{\"expressionType\":\"SIMPLE\",\"column\":{\"\
+  advanced_data_type\":null,\"certification_details\":null,\"certified_by\":null,\"\
+  column_name\":\"CURRENT_DEMAND\",\"description\":null,\"expression\":null,\"filterable\"\
+  :true,\"groupby\":true,\"id\":1060,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\"\
+  :null,\"type\":\"DECIMAL(27, 9)\",\"type_generic\":0,\"verbose_name\":null,\"warning_markdown\"\
+  :null},\"aggregate\":\"AVG\",\"sqlExpression\":null,\"datasourceWarning\":false,\"\
+  hasCustomLabel\":true,\"label\":\"CURRENT_DEMAND\",\"optionName\":\"metric_gs9s5gmxtvm_84kgi1myphu\"\
+  }],\"metricsLayout\":\"COLUMNS\",\"adhoc_filters\":[{\"clause\":\"WHERE\",\"subject\"\
+  :\"DAY_AVERAGE\",\"operator\":\"TEMPORAL_RANGE\",\"comparator\":\"No filter\",\"\
+  expressionType\":\"SIMPLE\"}],\"row_limit\":\"20\",\"order_desc\":true,\"aggregateFunction\"\
+  :\"Sum\",\"valueFormat\":\"SMART_NUMBER\",\"date_format\":\"smart_date\",\"rowOrder\"\
+  :\"value_z_to_a\",\"colOrder\":\"key_a_to_z\",\"conditional_formatting\":[{\"column\"\
+  :\"CURRENT_DEMAND\",\"colorScheme\":\"#BC9501\",\"operator\":\"\u2265\",\"targetValue\"\
+  :70000}],\"extra_form_data\":{},\"dashboards\":[12],\"force\":false,\"result_format\"\
+  :\"json\",\"result_type\":\"full\"},\"result_format\":\"json\",\"result_type\":\"\
+  full\"}"
+cache_timeout: null
+uuid: bae275f2-66ed-4ffd-bb37-c8f2c03cd51e
+version: 1.0.0
+dataset_uuid: e978aefc-46c5-4938-b915-2b39e61226a7
