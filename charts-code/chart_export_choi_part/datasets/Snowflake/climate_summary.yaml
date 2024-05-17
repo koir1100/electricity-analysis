@@ -22,7 +22,8 @@ metrics:
   description: null
   d3format: null
   currency: null
-  extra: {}
+  extra:
+    warning_markdown: ''
   warning_text: null
 columns:
 - column_name: WINDCHILL
@@ -33,11 +34,12 @@ columns:
   advanced_data_type: null
   groupby: true
   filterable: true
-  expression: 13.12 + (0.6215 * TEMPERATURE - 11.37 * POWER((3.6 * WINDSPEED), 0.16))
+  expression: 13.12 + (0.6215 * TEMPERATURE) - (11.37 * POWER((3.6 * WINDSPEED), 0.16))
     + (0.3965 * TEMPERATURE * POWER((3.6 * WINDSPEED), 0.16))
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: DISCOMFORT
   verbose_name: DISCOMFORT
   is_dttm: false
@@ -50,7 +52,8 @@ columns:
     - 26)) + 32
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: TEMPERATURE
   verbose_name: null
   is_dttm: false
@@ -62,7 +65,8 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: WINDSPEED
   verbose_name: null
   is_dttm: false
@@ -74,7 +78,8 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: HUMIDITY
   verbose_name: null
   is_dttm: false
@@ -86,7 +91,8 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: RAINFALL
   verbose_name: null
   is_dttm: false
@@ -98,7 +104,8 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: LOCAL_NAME
   verbose_name: null
   is_dttm: false
@@ -110,7 +117,8 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: TS
   verbose_name: null
   is_dttm: true
@@ -122,6 +130,7 @@ columns:
   expression: null
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 version: 1.0.0
 database_uuid: 98c7bfda-00bd-475f-8263-0f4cee957a9f
