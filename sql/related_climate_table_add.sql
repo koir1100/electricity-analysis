@@ -37,6 +37,7 @@ CREATE TABLE dev.analytics.windspeed_summary AS
     ORDER BY local_name, "month"
 );
 
+-- 기후 종합 테이블 (기온, 습도, 강수량, 풍속) -> 강수량, 습도 표시 및 불쾌지수, 체감온도 계산 활용
 CREATE OR REPLACE TABLE dev.analytics.climate_summary AS
 (
   SELECT
@@ -59,3 +60,6 @@ CREATE OR REPLACE TABLE dev.analytics.climate_summary AS
     GROUP BY A.local_name, E.local_number, A."month"
     ORDER BY E.local_number, A."month"
 );
+
+-- raw.data.local_order_table 은 지역명이 지역 번호 순으로 보이도록 가공한 테이블입니다
+-- (예: 1 -> 서울경기, 2 -> 강원영동, 10 -> 제주)
