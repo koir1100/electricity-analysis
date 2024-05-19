@@ -1,0 +1,86 @@
+table_name: electronic_power_demand_summary
+main_dttm_col: DAY_AVERAGE
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+schema: analytics
+sql: ''
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+uuid: e978aefc-46c5-4938-b915-2b39e61226a7
+metrics:
+- metric_name: rest_ratio
+  verbose_name: REST_RATIO
+  metric_type: null
+  expression: AVG(RESERVED_CAPACITY / SUPPORT_CAPACITY)
+  description: null
+  d3format: null
+  currency: null
+  extra: {}
+  warning_text: null
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra: {}
+  warning_text: null
+columns:
+- column_name: SUPPORT_CAPACITY
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DECIMAL(27, 9)
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: CURRENT_DEMAND
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DECIMAL(27, 9)
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: RESERVED_CAPACITY
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DECIMAL(28, 9)
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: DAY_AVERAGE
+  verbose_name: null
+  is_dttm: true
+  is_active: true
+  type: DATE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+version: 1.0.0
+database_uuid: 98c7bfda-00bd-475f-8263-0f4cee957a9f
