@@ -1,6 +1,41 @@
 # electricity-analysis
 ## 전력거래소 데이터 기반 대시보드 제작
 
+### 개요
+  - 본 프로젝트는 전력 산업의 여러 측면을 종합적으로 이해하는 것을 목적으로, 전력데이터 개발 포털 시스템에서 발전통계(발전량, 전력 수급)와 판매통계(판매금액, 판매 전력량) 데이터를 수집하고 대시보드에 시각화하여 분석을 진행한 프로젝트이다.
+
+### 설명
+![DE2차_SW아키텍처2 drawio](https://github.com/koir1100/electricity-analysis/assets/4710834/2041eb40-54d8-49f9-b959-190476b918d9)
+  - 상기 그림과 같이 CSV 파일을 S3로 적재한 후 (필요시 전처리 과정을 수행한 다음) 데이터 웨어하우스인 Snowflake에 적재하는 ETL을 한 다음, 적재된 데이터 기반으로 요약 테이블을 제작하는 ELT를 수행하여, 분석에 용이한 BI 툴인 Preset에 각종 차트를 대시보드에 추가하는 과정을 전체적으로 진행하였다.
+
+### 사용 스택
+#### Data Lake
+  - AWS S3
+
+#### Data Warehouse
+  - Snowflake
+
+#### Dashboard
+  - Preset.io
+
+#### Communication & Collaboration Tools
+  - Zepeto
+  - Slack
+  - Notion
+<br/>
+  
+---
+  
+### PART: 공통
+  - sql  
+    - 01_전력수급: 전력 수급 관련 쿼리문  
+    - 02_발전량_04_판매금액: 발전량 및 판매금액 관련 쿼리문  
+    - 03_판매전력량: 판매전력량 관련 쿼리문  
+<br/>
+  
+---
+  
+
 ### PART: 전력거래소 전력수급 데이터, 기상청 기상자료개방포털 내 기후 데이터 관련
 
 ### 디렉터리 구조 및 파일 설명
@@ -21,6 +56,10 @@
     - 전력수급 데이터는 2012년 6월 1일부터 2023년 4월 30일까지 데이터가 존재함에 따라 2023년 5월 1일부터 2023년 12월 31일에 대한 데이터를 별도로 수집하는 프로그램임(각 월별로 반자동 수행).  
       [전력거래소 - 전력통계정보시스템 - 실시간 전력수급](https://epsis.kpx.or.kr/epsisnew/selectEkgeEpsMepRealChart.do?menuId=030300) 페이지를 Selenium 기반 스크래핑 작업 수행  
   - source-data  
-    - 수집한 각종 데이터를 전처리한 데이터 source임.  
-    - power_demand_amount.csv: 전력 수급 데이터  
-    - merge_total_temperature.csv, humidity.csv, rainfall.csv, wind_speed.csv: 기후 데이터(기온, 습도, 강수량, 풍속)
+    - 수집한 각종 데이터를 전처리한 데이터 source임(encoding: euc-kr).  
+    - climate 폴더 내 전처리 과정을 제시하고자 여러 폴더를 두었음.  
+      - example-data: 최초 [기상자료개방포털](https://data.kma.go.kr/climate/RankState/selectRankStatisticsDivisionList.do?pgmNo=179)에서 다운로드한 파일 예  
+      - 2002-2011, 2012-2022: 1차로 erase_whitespace_rows.py 프로그램을 통한 공백 제거한 결과  
+      - wind: erase_whitespace_rows(wind).py 프로그램을 수행한 결과  
+    - merge_total_temperature.csv, humidity.csv, rainfall.csv, wind_speed.csv: climate 폴더 내 전처리 및 병합을 통해 실제 S3에 업로드한 기후 데이터(기온, 습도, 강수량, 풍속)  
+    - power_demand_amount.csv: [공공데이터포털 - 한국전력거래소_5분단위 전력수급현황](https://www.data.go.kr/data/15099819/fileData.do) 데이터  
