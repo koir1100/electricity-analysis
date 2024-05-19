@@ -2,8 +2,9 @@
 
 import os
 
-base_directory = '/Users/DragonPC/Desktop/project_2nd/climate/temperature'
-# base_directory = '/Users/DragonPC/Desktop/project_2nd/climate/rainfall'
+base_directory = '../source-data/climate/example-data/temperature' # rainfall도 line_list[7:] 로 동일
+#base_directory = '../source-data/climate/example-data/wind' # line_list[14:]
+#base_directory = '../source-data/climate/example-data/humidity' # line_list[15:]
 # Change this to your CSV file base directory
 
 for dir_path, dir_name_list, file_name_list in os.walk(base_directory):
@@ -16,4 +17,4 @@ for dir_path, dir_name_list, file_name_list in os.walk(base_directory):
         with open(file_path, 'r', encoding='cp949') as ifile:
             line_list = ifile.readlines()
         with open(file_path, 'w', encoding='cp949') as ofile:
-            ofile.writelines(line_list[14:])
+            ofile.writelines(line_list[7:])

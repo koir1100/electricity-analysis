@@ -6,11 +6,10 @@ import glob
 import csv
 
 weather_element = ['wind']
-#weather_element = ['humidity', 'rainfall', 'temperature']
 
 for element in weather_element:
-    path = '/Users/DragonPC/Desktop/project_2nd/climate/' + element + '/'
-    merge_path = '/Users/DragonPC/Desktop/project_2nd/climate/' + element + '/merge_total_' + element + '.csv'
+    path = '../source-data/climate/' + element + '/'
+    merge_path = '../source-data/climate/' + element + '/merge_total_' + element + '.csv'
 
     file_list = sorted(glob.glob(path + '*'))
     with open(merge_path, 'w', encoding='cp949') as f1:

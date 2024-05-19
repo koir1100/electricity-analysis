@@ -2,11 +2,10 @@
 # 출처: https://redcarrot.tistory.com/222
 import glob
 
-# climate_elements = ['05', '06', '07', '08', '09', '10', '11', '12']
 climate_elements = ['humidity', 'rainfall', 'temperature']
 
 for element in climate_elements:
-    path = '/Users/DragonPC/Desktop/project_2nd/climate/2002-2011/' + element + '/'
+    path = '../source-data/climate/2002-2011/' + element + '/'
     merge_path = path + 'merge_' + element + '.csv'
 
     file_list = sorted(glob.glob(path + '*'))

@@ -27,7 +27,7 @@ def wrap_multi_data_with_mark(line):
     new_line = ','.join(split_list)
     return new_line
 
-base_directory = '/Users/DragonPC/Desktop/project_2nd/climate/wind/'
+base_directory = '../source-data/climate/example-data/wind/'
 # Change this to your CSV file base directory
 
 for dir_path, dir_name_list, file_name_list in os.walk(base_directory):

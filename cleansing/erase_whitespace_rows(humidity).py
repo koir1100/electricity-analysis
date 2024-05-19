@@ -12,7 +12,7 @@ def last_comma_attach_quote(line):
 
     return new_line
 
-base_directory = '/Users/DragonPC/Desktop/project_2nd/climate/humidity'
+base_directory = '../source-data/climate/example-data/humidity'
 # Change this to your CSV file base directory
 
 for dir_path, dir_name_list, file_name_list in os.walk(base_directory):
