@@ -2,16 +2,21 @@
 # 출처: https://redcarrot.tistory.com/222
 # 출처: https://stackoverflow.com/a/57394274
 # 출처: https://stackoverflow.com/a/4521533
+from pathlib import Path
 import glob
 import csv
 
-weather_element = ['wind']
+weather_element = ['humidity', 'rainfall', 'temperature']
 
 for element in weather_element:
-    path = '../source-data/climate/' + element + '/'
-    merge_path = '../source-data/climate/' + element + '/merge_total_' + element + '.csv'
+    relative_path = Path(__file__).parent
+    
+    target_path = '../source-data/climate/2002-2011/' + element + '/'
+    path = (relative_path / target_path).resolve()
+    merge_file = 'merge_total_' + element + '.csv'
+    merge_path = (path / merge_file).resolve()
 
-    file_list = sorted(glob.glob(path + '*'))
+    file_list = sorted(glob.glob(str(path) + '/*'))
     with open(merge_path, 'w', encoding='cp949') as f1:
         write = csv.writer(f1, delimiter=',')
 
