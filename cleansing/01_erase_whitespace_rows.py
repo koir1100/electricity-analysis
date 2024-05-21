@@ -20,4 +20,4 @@ for dir_path, _, file_name_list in os.walk(base_directory):
         with open(file_path, 'r', encoding='cp949') as ifile:
             line_list = ifile.readlines()
         with open(file_path, 'w', encoding='cp949') as ofile:
-            ofile.writelines(line_list[14:])
+            ofile.writelines(line_list[7:])
